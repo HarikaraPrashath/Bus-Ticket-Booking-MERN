@@ -266,7 +266,7 @@ const BusSeat = () => {
             </div>
           </div>
         </div>
-
+ 
         {/* Checkout Section */}
         <div className="w-full">
           {selectedSeats.length > 0 ? (

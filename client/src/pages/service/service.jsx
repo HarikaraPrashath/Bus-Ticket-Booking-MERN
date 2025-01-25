@@ -3,74 +3,71 @@ import Topplayout from "../../layout/toppages/topplayout";
 import Rootlayout from "../../layout/rootlayout";
 import { motion } from "framer-motion";
 
-const About = () => {
+const Service = () => {
   return (
     <div className="w-full space-y-12 pb-16 bg-blue-50">
       {/* Top Section with Animated Banner */}
       <Topplayout
         bgImage={
-          "https://www.akinatours.com/wp-content/gallery/luxury-mini-coach/cache/Luxury-Mini-Coach-Interior-Blue-LEDs-Rack-1800x1200.jpg-nggid0221-ngg0dyn-1197x800x60-00f0w010c010r110f110r010t010.jpg"
+            "https://www.akinatours.com/wp-content/gallery/luxury-mini-coach/cache/Luxury-Mini-Coach-Interior-Blue-LEDs-Rack-1800x1200.jpg-nggid0221-ngg0dyn-1197x800x60-00f0w010c010r110f110r010t010.jpg"
         }
-        title={"About Us"}
+        title={"Our Services"}
       />
 
       {/* Main Content Section */}
       <Rootlayout className="space-y-12 w-full pb-16 px-4 md:px-8 lg:px-12">
-        {/* Who We Are Section */}
+        {/* Our Services Section */}
         <motion.section
           className="max-w-5xl mx-auto text-center space-y-6"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <h2 className="text-4xl font-extrabold text-blue-800">
-            Who We Are
-          </h2>
+          <h2 className="text-4xl font-extrabold text-blue-800">Our Services</h2>
           <p className="text-lg text-gray-600 leading-relaxed">
-            We are a team of passionate individuals dedicated to making a
-            difference through innovation, creativity, and excellence. Our
-            goal is to provide unforgettable experiences and solutions that
-            transform the way you achieve success.
+            We offer a range of transportation services tailored to your needs.
+            From convenient bus travel across Sri Lanka to private trip hire,
+            our goal is to make your journey smooth, safe, and enjoyable.
           </p>
         </motion.section>
 
-        {/* Our Mission Section */}
+        {/* Bus Travel Section */}
         <motion.section
           className="max-w-5xl mx-auto space-y-6 bg-blue-100 rounded-xl p-8 shadow-lg"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
         >
-          <h3 className="text-3xl font-bold text-blue-700">
-            Our Mission
-          </h3>
+          <h3 className="text-3xl font-bold text-blue-700">Bus Travel</h3>
           <p className="text-lg text-gray-700 leading-relaxed">
-            To empower individuals and organizations to achieve their goals
-            by offering world-class services and innovative solutions. We
-            believe in creating value through collaboration and pushing the
-            boundaries of what's possible.
+            Explore Sri Lanka with our modern and comfortable buses. Our routes
+            cover all major cities, ensuring affordable and reliable
+            transportation for daily commutes, tourism, or business trips.
           </p>
         </motion.section>
 
-        {/* Meet Our Team Section */}
+        {/* Private Trip Hire Section */}
         <motion.section
           className="max-w-5xl mx-auto space-y-6 text-center"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2 }}
         >
-          <h3 className="text-3xl font-bold text-blue-700">
-            Meet Our Team
-          </h3>
+          <h3 className="text-3xl font-bold text-blue-700">Private Trip Hire</h3>
           <p className="text-lg text-gray-700 leading-relaxed">
-            Our team is a diverse group of talented professionals who are
-            committed to delivering exceptional results. We value
-            collaboration, creativity, and innovation in everything we do.
+            Need personalized travel plans? Hire our private trips with premium
+            vehicles and experienced drivers. Whether it’s a family vacation or
+            a corporate retreat, we ensure a seamless journey for you and your
+            group.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-            {/* Team Member Cards */}
-            {[1, 2, 3].map((_, i) => (
+            {/* Service Feature Cards */}
+            {[
+              { title: "Luxury Buses", description: "Comfortable seating and amenities." },
+              { title: "Custom Itineraries", description: "Plan your trip your way." },
+              { title: "24/7 Support", description: "Reliable customer service anytime." },
+            ].map((service, i) => (
               <motion.div
                 key={i}
                 className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition"
@@ -78,11 +75,9 @@ const About = () => {
               >
                 <div className="h-24 w-24 mx-auto rounded-full bg-blue-200"></div>
                 <h4 className="mt-4 text-xl font-semibold text-blue-800">
-                  Team Member {i + 1}
+                  {service.title}
                 </h4>
-                <p className="text-sm text-gray-600">
-                  Expert in innovation and excellence.
-                </p>
+                <p className="text-sm text-gray-600">{service.description}</p>
               </motion.div>
             ))}
           </div>
@@ -96,13 +91,14 @@ const About = () => {
           transition={{ duration: 1.5 }}
         >
           <h4 className="text-2xl font-semibold text-blue-700">
-            Ready to Join Us?
+            Ready to Travel with Us?
           </h4>
           <p className="mt-2 text-gray-600">
-            Let’s work together to create something amazing!
+            Whether it's a quick trip or a long journey, we’ve got you covered.
+            Book your service today and travel hassle-free.
           </p>
           <button className="mt-6 px-8 py-3 bg-blue-600 text-white font-medium rounded-full hover:bg-blue-700 transition shadow-md">
-            Contact Us
+            Book Now
           </button>
         </motion.section>
       </Rootlayout>
@@ -110,4 +106,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Service;
